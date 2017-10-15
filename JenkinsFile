@@ -15,6 +15,6 @@ archiveArtifacts 'target/*.jar'
 
 
 stage('deplay'){
-sh 'cp target/*war /newDataaa'
+sh 'cp target/*.jar /newDataaa'
     }
 }
