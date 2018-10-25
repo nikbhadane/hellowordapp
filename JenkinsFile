@@ -1,20 +1,9 @@
 node {
-
-stage ('scm-operation'){
-git 'https://github.com/nikbhadane/hellowordapp.git'
-    }
-
-stage ('package-build'){
-sh 'mvn clean package'
-    }
-
-
-stage ('archive'){
-archiveArtifacts 'target/*.jar'
-    }
-
-
-stage('deplay'){
-sh 'cp target/*.jar /newDataaa'
-    }
-}
+   stage('Fetch latest code') {
+       checkout scm
+   }
+   stage('Build Docker image') {
+       sh 'ls -al ; git branch; df -h; sleep 45'
+       sh 'echo "This is testing of new JenkinsFile under hellowordapp"'
+       }
+ }
